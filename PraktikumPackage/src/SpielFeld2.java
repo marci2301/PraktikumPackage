@@ -4,6 +4,11 @@ public class SpielFeld2 {
 	final double spielfeld = 80;
 	final double anzahlZeilen = 6;
 	final double anzahlSpalten = 7;
+	
+	final double breite = spielfeld / anzahlSpalten;
+	final double hohe = spielfeld / anzahlZeilen;
+	final double radius = Math.min(breite, hohe) / 2 - 1;
+
 
 	SpielStein felder[][] = new SpielStein[(int) anzahlSpalten][(int) anzahlZeilen];
 
@@ -11,10 +16,6 @@ public class SpielFeld2 {
 		StdDraw.setXscale(0, spielfeld);
 		StdDraw.setYscale(0, spielfeld);
 		StdDraw.rectangle(spielfeld / 2, spielfeld / 2, spielfeld / 2, spielfeld / 2);
-
-		final double breite = spielfeld / anzahlSpalten;
-		final double hohe = spielfeld / anzahlZeilen;
-		final double radius = Math.min(breite, hohe) / 2 - 1;
 
 		StdOut.println("Spielfeld: " + spielfeld + " Zeilen: " + anzahlZeilen + " Spalten: " + anzahlSpalten
 				+ " Radius: " + radius);
@@ -33,16 +34,16 @@ public class SpielFeld2 {
 	
 	public boolean legeStein(int spalte, boolean farbe){
 		
-		for(int zeile=0; zeile< anzahlZeilen; zeile++){
-			if(felder[zeile] == null){
+		for(int zeile=0; zeile < anzahlZeilen; zeile++){
+			if(felder[spalte][zeile] == null){
 				SpielStein stein = new SpielStein(farbe);
-				stein.zeichne(spalte * breite + breite , yPos, groesse);
+				felder[spalte][zeile] = stein;
+				stein.zeichne(spalte * breite + breite / 2, zeile * hohe + hohe / 2, radius);
+				farbe = !farbe;
+				break;
 				
 			}
-		}
-		
-		
-		return true;
-		
+		}		
+		return farbe;		
 	}
 }

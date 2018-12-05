@@ -16,8 +16,7 @@ public class SpielStein {
 		}
 		else{
 			StdDraw.setPenColor(StdDraw.BOOK_RED);
-		}
-		
+		}		
 		StdDraw.filledCircle(xPos, yPos, groesse);
 	}
 }
