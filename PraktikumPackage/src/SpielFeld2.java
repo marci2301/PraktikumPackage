@@ -46,4 +46,20 @@ public class SpielFeld2 {
 		}		
 		return farbe;		
 	}
+	
+	public boolean gewonnen() {
+		for(int zeile=0; zeile < anzahlZeilen; zeile++) {
+			for(int spalte=0; spalte < anzahlSpalten; spalte++) {
+				if(felder[spalte][zeile] != null) {
+					boolean farbe = felder[spalte][zeile].istSchwarz;
+					int counter = 1;
+					
+					if(felder[spalte][zeile+1].istSchwarz && felder[spalte][zeile+2].istSchwarz && felder[spalte][zeile+3].istSchwarz) {
+						StdOut.println("Das Spiel ist vorbei!");
+						break;
+					}
+				}
+			}
+		}
+	}
 }
