@@ -49,21 +49,12 @@ public class SpielFeld2 {
 	
 	public boolean gewonnen() {
 		boolean gewonnen = false;
-		for(int zeile=0; zeile < anzahlZeilen; zeile++) {
-			for(int spalte=0; spalte < anzahlSpalten; spalte++) {
-				if(felder[spalte][zeile] != null && felder[spalte][zeile+1] != null && felder[spalte][zeile+2] != null && felder[spalte][zeile+3] != null || felder[spalte][zeile] != null && felder[spalte+1][zeile] != null && felder[spalte+2][zeile] != null && felder[spalte+3][zeile] != null ) {			
+		for(int zeile=0; zeile < 2; zeile++) {
+			for(int spalte=0; spalte < 3; spalte++) {
+				if(felder[spalte][zeile] != null && felder[spalte+1][zeile] != null && felder[spalte+2][zeile] != null && felder[spalte+3][zeile] != null) {			
 					
-					if(felder[spalte][zeile].istSchwarz && felder[spalte][zeile+1].istSchwarz && felder[spalte][zeile+2].istSchwarz && felder[spalte][zeile+3].istSchwarz) {
-						StdOut.println("Das Spiel ist vorbei!");
-						gewonnen = true;
-						break;
-					}
-					else if(!felder[spalte][zeile].istSchwarz && !felder[spalte][zeile+1].istSchwarz && !felder[spalte][zeile+2].istSchwarz && !felder[spalte][zeile+3].istSchwarz){
-						StdOut.println("Das Spiel ist vorbei!");
-						gewonnen = true;
-						break;
-					}
-					else if(felder[spalte][zeile].istSchwarz && felder[spalte+1][zeile].istSchwarz && felder[spalte+2][zeile].istSchwarz && felder[spalte+3][zeile].istSchwarz){
+					
+					if(felder[spalte][zeile].istSchwarz && felder[spalte+1][zeile].istSchwarz && felder[spalte+2][zeile].istSchwarz && felder[spalte+3][zeile].istSchwarz){
 						StdOut.println("Das Spiel ist vorbei!");
 						gewonnen = true;
 						break;
@@ -74,7 +65,23 @@ public class SpielFeld2 {
 						break;
 					}
 				}
+				
+				if(felder[spalte][zeile] != null && felder[spalte][zeile+1] != null && felder[spalte][zeile+2] != null && felder[spalte][zeile+3] != null) {
+					
+					if(!felder[spalte][zeile].istSchwarz && !felder[spalte][zeile+1].istSchwarz && !felder[spalte][zeile+2].istSchwarz && !felder[spalte][zeile+3].istSchwarz){
+						StdOut.println("Das Spiel ist vorbei!");
+						gewonnen = true;
+						break;
+		
+				}
+					else if(felder[spalte][zeile].istSchwarz && felder[spalte][zeile+1].istSchwarz && felder[spalte][zeile+2].istSchwarz && felder[spalte][zeile+3].istSchwarz) {
+						StdOut.println("Das Spiel ist vorbei!");
+						gewonnen = true;
+						break;
+					}
+				}
 			}
+		
 		}
 		return gewonnen;
 	}
