@@ -5,20 +5,23 @@ public class VierGewinnt {
 		SpielFeld2 spielFeld = new SpielFeld2();
 		boolean farbe = false;
 		boolean gewonnen = false;
+		int spalte = 0;
 		
 		spielFeld.zeichne();
 		
 		while(!gewonnen){
 			
-			
 			StdOut.println("In welche Spalte wollen Sie setzen?");
-			int spalte = StdIn.readInt();
+			spalte = StdIn.readInt();
+			
+				if(spalte<0 || spalte>6) {
+					StdOut.println("Ungultige Spalte!");
+					continue;
+				}
 			
 			farbe = spielFeld.legeStein(spalte-1, farbe);
 			spielFeld.zeichne();
 			gewonnen = spielFeld.gewonnen();
 		}
-
 	}
-
 }
