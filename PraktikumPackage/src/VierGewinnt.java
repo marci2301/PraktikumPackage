@@ -11,6 +11,13 @@ public class VierGewinnt {
 		
 		while(!gewonnen){
 			
+			if(farbe == true){
+				StdOut.println("Schwarz ist am Zug!");
+			}
+			else{
+				StdOut.println("Rot ist am Zug!");
+			}
+			
 			StdOut.println("In welche Spalte wollen Sie setzen?");
 			spalte = StdIn.readInt();
 			
