@@ -30,6 +30,7 @@ public class BuchVerwaltung {
 	    buecher[6] = new EBook("EBook3", 920, 200.49, 100, 1.25, "doc");
 		buecher[7] = null;
 		
+		
 		for(int i=0;i<buecher.length; i++){
 			if(buecher[i] != null){
 			StdOut.println(buecher[i].toString());
