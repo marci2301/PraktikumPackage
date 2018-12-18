@@ -34,7 +34,7 @@ public class SpielFeld2 {
 	
 	public boolean legeStein(int spalte, boolean farbe){
 		
-			if(felder[spalte][5] == null){
+			if(felder[spalte][(int)anzahlZeilen-1] == null){
 				for(int zeile=0; zeile < anzahlZeilen; zeile++){
 					if(felder[spalte][zeile] == null){
 						SpielStein stein = new SpielStein(farbe);

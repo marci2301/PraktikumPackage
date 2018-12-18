@@ -38,12 +38,14 @@ public class Buch {
 	
 	public static double berechneDurchschnitsspreis(Buch[] buecher){
 		double dpreis = 0;		
+		int counter = 0;
 		for(int i=0;i<buecher.length;i++){
 			if(buecher[i] != null){
 			dpreis+=buecher[i].getPreis();
+			counter++;
 			}
 		}
-		dpreis = dpreis/(buecher.length);
+		dpreis = dpreis/counter;
 		dpreis = (Math.round(dpreis*100));
 		dpreis = dpreis/100;
 		return dpreis;

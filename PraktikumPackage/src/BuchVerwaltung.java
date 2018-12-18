@@ -20,12 +20,15 @@ public class BuchVerwaltung {
 //			buecher[i] = new Buch(name, artikelnr, preis, bestand);
 //		}
 		
-		Buch[] buecher = new Buch[5];
+		Buch[] buecher = new Buch[8];
 		buecher[0] = new Buch("Buch 1", 111, 9.99, 100);
 		buecher[1] = new Buch("Buch 2", 122, 33.50, 50);
-		buecher[2] = null;
+		buecher[2] = new EBook("EBook1", 900, 20.99, 1, 12.5, "pdf");
 		buecher[3] = new Buch("Buch 4", 144, 45.49, 33);
 		buecher[4] = new Buch("Buch 5", 155, 19.99, 75);
+		buecher[5] = new EBook("EBook2", 910, 5.99, 5, 125, "xls");
+	    buecher[6] = new EBook("EBook3", 920, 200.49, 100, 1.25, "doc");
+		buecher[7] = null;
 		
 		for(int i=0;i<buecher.length; i++){
 			if(buecher[i] != null){

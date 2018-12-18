@@ -3,7 +3,7 @@ public class VierGewinnt {
 	public static void main(String[] args) {
 		
 		SpielFeld2 spielFeld = new SpielFeld2();
-		boolean farbe = false;
+	    boolean farbe = false;
 		boolean gewonnen = false;
 		int spalte = 0;
 		
