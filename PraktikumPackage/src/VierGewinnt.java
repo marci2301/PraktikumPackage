@@ -21,7 +21,7 @@ public class VierGewinnt {
 			StdOut.println("In welche Spalte wollen Sie setzen?");
 			spalte = StdIn.readInt();
 			
-				if(spalte<0 || spalte>6) {
+				if(spalte<0 || spalte>7) {
 					StdOut.println("Ungultige Spalte!");
 					continue;
 				}

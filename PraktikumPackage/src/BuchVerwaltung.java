@@ -27,7 +27,7 @@ public class BuchVerwaltung {
 		buecher[3] = new Buch("Buch 4", 144, 45.49, 33);
 		buecher[4] = new Buch("Buch 5", 155, 19.99, 75);
 		buecher[5] = new EBook("EBook2", 910, 5.99, 5, 125, "xls");
-	    buecher[6] = new EBook("EBook3", 920, 200.49, 100, 1.25, "doc");
+	    buecher[6] = new EBook("EBook3", 920, 200, 100, 125, "doc");
 		buecher[7] = null;
 		
 		

@@ -85,7 +85,7 @@ public class SpielFeld2 {
 					}
 				}
 				
-				if(zeile<3 && spalte<4) {
+			//	if(zeile<3 && spalte<4) {
 					if(felder[spalte][zeile] != null && felder[spalte+1][zeile+1] != null && felder[spalte+2][zeile+2] != null && felder[spalte+3][zeile+3] != null) {			
 						
 						
@@ -100,18 +100,18 @@ public class SpielFeld2 {
 							break;
 						}
 					}
-				}
+				//}
 				
 				if(zeile>2 && spalte<4) {
-					if(felder[spalte][zeile] != null && felder[spalte-1][zeile-1] != null && felder[spalte-2][zeile-2] != null && felder[spalte-3][zeile-3] != null) {			
+					if(felder[spalte][zeile] != null && felder[spalte+1][zeile-1] != null && felder[spalte+2][zeile-2] != null && felder[spalte+3][zeile-3] != null) {			
 						
 						
-						if(felder[spalte][zeile].istSchwarz && felder[spalte-1][zeile-1].istSchwarz && felder[spalte-2][zeile-2].istSchwarz && felder[spalte-3][zeile-3].istSchwarz){
+						if(felder[spalte][zeile].istSchwarz && felder[spalte+1][zeile-1].istSchwarz && felder[spalte+2][zeile-2].istSchwarz && felder[spalte+3][zeile-3].istSchwarz){
 							StdOut.println("Schwarz hat gewonnen. Das Spiel ist vorbei!");
 							gewonnen = true;
 							break;
 						}
-						else if(!felder[spalte][zeile].istSchwarz && !felder[spalte-1][zeile-1].istSchwarz && !felder[spalte-2][zeile-2].istSchwarz && !felder[spalte-3][zeile-3].istSchwarz){
+						else if(!felder[spalte][zeile].istSchwarz && !felder[spalte+1][zeile-1].istSchwarz && !felder[spalte+2][zeile-2].istSchwarz && !felder[spalte+3][zeile-3].istSchwarz){
 							StdOut.println("Rot hat gewonnen. Das Spiel ist vorbei!");
 							gewonnen = true;
 							break;
